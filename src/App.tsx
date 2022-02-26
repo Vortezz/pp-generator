@@ -20,7 +20,7 @@ function App() {
     const bodyFiles = ["normal.png", "ice.png", "fire.png"]
     const tshirtsFiles = ["black_shirt.png", "ekalia_shirt.png", "white_shirt.png", "green_shirt.png", "overalls.png"]
     const flagsFiles = ["lgbt_flags.png", "ukraine_flags.png"]
-    const miscFiles = ["party_hat.png"]
+    const miscFiles = ["party_hat.png", "black_hat.png", "xmas_hat.png", "sunglasses.png", "bandana_green.png", "bandana_red.png"]
 
     function renderPicture() {
         // @ts-ignore
