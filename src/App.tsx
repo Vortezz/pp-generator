@@ -6,18 +6,21 @@ function App() {
     const body: any [] = [];
     const tshirt: any [] = [];
     const flags: any [] = [];
+    const miscs: any [] = [];
 
     const componentRef = useRef<HTMLDivElement>(null);
 
     const [currentBody, setCurrentBody] = useState(0)
     const [currentTshirt, setCurrentTshirt] = useState(9999)
     const [currentFlags, setCurrentFlags] = useState(9999)
+    const [currentMisc, setCurrentMisc] = useState(9999)
 
     const [render, setRender] = useState("")
 
     const bodyFiles = ["normal.png", "ice.png", "fire.png"]
     const tshirtsFiles = ["black_shirt.png", "ekalia_shirt.png", "white_shirt.png", "green_shirt.png", "overalls.png"]
     const flagsFiles = ["lgbt_flags.png", "ukraine_flags.png"]
+    const miscFiles = ["party_hat.png"]
 
     function renderPicture() {
         // @ts-ignore
@@ -30,6 +33,9 @@ function App() {
         }
         if (currentFlags != 9999) {
             images.push({src: flags[currentFlags]})
+        }
+        if (currentMisc != 9999) {
+            images.push({src: miscs[currentMisc]})
         }
         images.filter((val) => val !== null);
         console.log(images)
@@ -50,6 +56,10 @@ function App() {
         flags.push(require("./pictures/flags/" + flagsFiles[i]))
     }
 
+    for (const i in flagsFiles) {
+        flags.push(require("./pictures/misc/" + flagsFiles[i]))
+    }
+
     // @ts-ignore
     return (
         <div className="w-full h-screen bg-gray-800">
@@ -66,6 +76,10 @@ function App() {
                                  className={"h-[calc(30rem)] w-[calc(30rem)] absolute top-0"}/>}
                         {currentFlags == 9999 ? null :
                             <img srcSet={flags[currentFlags]}
+                                 className={"h-[calc(30rem)] w-[calc(30rem)] absolute top-0"}/>
+                        }
+                        {currentMisc == 9999 ? null :
+                            <img srcSet={flags[currentMisc]}
                                  className={"h-[calc(30rem)] w-[calc(30rem)] absolute top-0"}/>
                         }
                     </div>
@@ -133,6 +147,21 @@ function App() {
                             }
                             }
                                         className={"m-2 w-20 h-20 " + (currentFlags === key ? "border-2 rounded-md border-gray-200" : "")}/>
+                        })
+                    }
+                </div>
+                <div className={"flex mx-auto"}>
+                    {
+                        miscs.map((miscPicture, key) => {
+                            return <img src={miscPicture} onClick={() => {
+                                if (currentMisc === key) {
+                                    setCurrentFlags(9999)
+                                } else {
+                                    setCurrentFlags(key)
+                                }
+                            }
+                            }
+                                        className={"m-2 w-20 h-20 " + (currentMisc === key ? "border-2 rounded-md border-gray-200" : "")}/>
                         })
                     }
                 </div>
