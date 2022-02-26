@@ -155,9 +155,9 @@ function App() {
                         miscs.map((miscPicture, key) => {
                             return <img src={miscPicture} onClick={() => {
                                 if (currentMisc === key) {
-                                    setCurrentFlags(9999)
+                                    setCurrentMisc(9999)
                                 } else {
-                                    setCurrentFlags(key)
+                                    setCurrentMisc(key)
                                 }
                             }
                             }
