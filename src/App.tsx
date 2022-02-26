@@ -56,8 +56,8 @@ function App() {
         flags.push(require("./pictures/flags/" + flagsFiles[i]))
     }
 
-    for (const i in flagsFiles) {
-        flags.push(require("./pictures/misc/" + flagsFiles[i]))
+    for (const i in miscFiles) {
+        miscs.push(require("./pictures/misc/" + miscFiles[i]))
     }
 
     // @ts-ignore
