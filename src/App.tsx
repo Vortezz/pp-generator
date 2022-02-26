@@ -9,15 +9,15 @@ function App() {
 
     const componentRef = useRef<HTMLDivElement>(null);
 
-    const [currentBody, setCurrentBody] = useState(9999)
+    const [currentBody, setCurrentBody] = useState(0)
     const [currentTshirt, setCurrentTshirt] = useState(9999)
     const [currentFlags, setCurrentFlags] = useState(9999)
 
     const [render, setRender] = useState("")
 
-    const bodyFiles = ["fire.png", "ice.png", "normal.png"]
+    const bodyFiles = ["normal.png", "ice.png", "fire.png"]
+    const tshirtsFiles = ["black_shirt.png", "ekalia_shirt.png", "white_shirt.png", "green_shirt.png", "overalls.png"]
     const flagsFiles = ["lgbt_flags.png", "ukraine_flags.png"]
-    const tshirtsFiles = ["black_shirt.png", "ekalia_shirt.png", "white_shirt.png"]
 
     function renderPicture() {
         // @ts-ignore
