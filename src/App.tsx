@@ -79,7 +79,7 @@ function App() {
                                  className={"h-[calc(30rem)] w-[calc(30rem)] absolute top-0"}/>
                         }
                         {currentMisc == 9999 ? null :
-                            <img srcSet={flags[currentMisc]}
+                            <img srcSet={miscs[currentMisc]}
                                  className={"h-[calc(30rem)] w-[calc(30rem)] absolute top-0"}/>
                         }
                     </div>
